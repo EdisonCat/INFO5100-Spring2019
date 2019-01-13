@@ -20,6 +20,7 @@
 ## Sequence of invoking behaviors on objects
 
 #### RegisteringCourses
+```
 Platform regPlatform=new Platform();
 if(regPlatform.connectionAvailable(Internet.status)){
 	User usr=new User();
@@ -45,7 +46,7 @@ if(regPlatform.connectionAvailable(Internet.status)){
 }
 else
 	regPlatform.returnConnectionError();
-
+```
 
 # Problem 2:Order food in a food delivery app(Like Uber Eats)
 
@@ -69,6 +70,7 @@ else
 ## Sequence of invoking behaviors on objects
 
 ##### PostingRestaurantInformation
+```
 Restaurant rest
 App app
 rest.startApp->app
@@ -79,8 +81,9 @@ if Internet.available
 		app.returnLoginError
 else
 	app.returnConnectionError
-
+```
 ##### OrderingFood
+```
 User usr
 App app
 usr.startApp->app
@@ -96,7 +99,7 @@ if Internet.available
 		app.returnLoginError
 else
 	app.returnConnectionError
-
+```
 
 # Problem 3:Design a platform for buying tickets of local events
 
@@ -120,6 +123,7 @@ else
 ## Sequence of invoking behaviors on objects
 
 ##### PostingEventInformation
+```
 Host host
 Website platform
 if Internet.available
@@ -129,8 +133,9 @@ if Internet.available
 		platform.returnLoginError
 else
 	platform.returnConnectionError
-
+```
 ##### BuyingTickets
+```
 User usr
 Website platform
 if Internet.available
@@ -148,7 +153,7 @@ if Internet.available
 		platform.returnLoginError
 else
 	platform.returnConnectionError
-
+```
 
 # Problem 4:Buy a computer from Amazon
 
@@ -168,6 +173,7 @@ else
 ## Sequence of invoking behaviors on objects
 
 ##### BuyingAComputer
+```
 User usr
 Platform amazon
 if usr.openPlatform->amazon
@@ -188,7 +194,7 @@ if usr.openPlatform->amazon
 	else
 		amazon.returnConnectionError
 else
-
+```
 
 # Problem 5:Design an app for booking hotels
 
@@ -212,6 +218,7 @@ else
 ## Sequence of invoking behaviors on objects
 
 ##### PostingHotelInformation
+```
 Hotel hotel
 App app
 if hotel.openApp
@@ -225,8 +232,9 @@ if hotel.openApp
 	else
 		app.returnConnectionError
 else
-
+```
 ##### BookingHotels
+```
 User usr
 App app
 if usr.openApp
@@ -248,3 +256,4 @@ if usr.openApp
 	else
 		app.returnConnectionError
 else
+```
