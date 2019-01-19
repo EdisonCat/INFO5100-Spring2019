@@ -166,8 +166,6 @@ public class Assignment2 {
     public static void main(String[] args) {
         Employee a = new Employee("Jenny", 20, Gender.FEMALE, 2000);
         Employee b = new Employee("John", 30, Gender.MALE, 2500);
-        Employee c = new Employee("aaa",20,Gender.MALE,1000);
-        System.out.println("Before: a=" + a.getName());
         System.out.println("Before: b=" + b.getName());
         swap(a, b);//
         System.out.println("After: a=" + a.getName());
