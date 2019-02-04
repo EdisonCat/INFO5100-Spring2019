@@ -104,6 +104,5 @@ public class Course {
         course.getStudents();
         System.out.println("number of students: "+course.numberOfStudent);
         System.out.println("course if full: "+course.ifFull());
-        String str[]=new String[3];
     }
 }
