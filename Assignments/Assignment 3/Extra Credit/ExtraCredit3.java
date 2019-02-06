@@ -1,7 +1,9 @@
 public class ExtraCredit3 {
     public String reverse(String s){
         String result="";
-        /* Method 1. Trim the leading and trailing spaces first
+        /* Method 1.
+        //Trimming the leading and trailing spaces first
+        //equals to using String.trim()
 
         int i=0;
         System.out.println(s.length());
@@ -18,13 +20,13 @@ public class ExtraCredit3 {
             }
         }
         s=s.substring(0,i+1);
-        ...
-
-        //Then cut the words by the spaces in between using for-loop...
+        //...
+        //Then cut the words by the spaces in between using for-loop and flags...
         */
 
-        //Method 2. Directly compute every index of the input
-        boolean flagFirstSpace=false;
+        //Method 2.
+        //Directly compute every index of the input
+        /*boolean flagFirstSpace=false;
         boolean flagSecondSpace=false;
         int j,k;
         for(j=s.length()-1,k=s.length()-1;j>=0;j--){
@@ -43,7 +45,23 @@ public class ExtraCredit3 {
                 k=j;
             }
         }
-        result=result.substring(1,result.length());
+        result=result.substring(1);
+        System.out.println(result);
+        return result;*/
+
+        //Method 3
+        //trim first, build new string, trim again
+        s=s.trim();
+        String [] temp=s.split(" ");
+        for(int i=0;i<temp.length;i++){
+            temp[i].replaceAll("\\s+","");//replace spaces with empty string
+        }
+        for(int i=temp.length-1;i>=0;i--) {
+            if(!temp[i].isEmpty()){
+                result+=temp[i]+" ";
+            }
+        }
+        result=result.trim();
         System.out.println(result);
         return result;
     }
