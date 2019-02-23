@@ -12,8 +12,29 @@ public class CheckingAccount extends Account
     //
     // WRITE YOUR CODE FOR ALL METHODS
     //
+    public CheckingAccount(String fname, String lname, double cb){
+        super(fname,lname,cb);
+    }
 
+    @Override
+    public double DebitTransaction(double debitAmount) {
+        super.DebitTransaction(debitAmount);
+        ChargeFee();
+        return this.CurBalance;
+    }
 
+    @Override
+    public double CreditTransaction(double creditAmount) {
+        super.CreditTransaction(creditAmount);
+        ChargeFee();
+        return this.CurBalance;
+    }
+
+    private void ChargeFee(){
+        if(this.CurBalance<MinBalance){
+            this.CurBalance-=Fee;
+        }
+    }
     // Test
     public static void main(String[] args)
     {

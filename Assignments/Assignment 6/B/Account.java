@@ -20,17 +20,15 @@ public class Account
 
 	    public double DebitTransaction(double debitAmount)
 	    {
-	        //
-	        // WRITE YOUR CODE
-	        //
+	        this.CurBalance-=debitAmount;
+	        return this.CurBalance;
 	    }
 	
 
 	    public double CreditTransaction(double creditAmount)
 	    {
-	        //
-	        // WRITE YOUR CODE
-	        //
+	        this.CurBalance+=creditAmount;
+	        return this.CurBalance;
 	    }
 	
 
