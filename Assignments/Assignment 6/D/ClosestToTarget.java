@@ -1,12 +1,14 @@
 public class ClosestToTarget {
     public int closestToTarget (int target, int [] A){
-        int left=0;
-        int right=A.length-1;
-        if(A==null||A.length==0) {//parameter passed will not be null
-            System.out.println("Array is empty");
-            throw new NullPointerException();
+        if(A==null) {//parameter passed will not be null
+            throw new NullPointerException("Array is null");
+        }
+        else if(A.length==0){
+            throw new NullPointerException("Array is empty");
         }
         else {
+            int right=A.length-1;
+            int left=0;
             for (int i = (right + left) / 2; right - left > 1; i = (right + left) / 2) {
                 if (A[i] > target) {
                     right = i;
@@ -23,7 +25,6 @@ public class ClosestToTarget {
         }
     }
     public static void main(String args[]){
-        try {
             int [] A={1,2,3,3,3,3,3,5};
             ClosestToTarget closestToTarget=new ClosestToTarget();
             int [] B=null;//null
@@ -34,10 +35,6 @@ public class ClosestToTarget {
             System.out.println(closestToTarget.closestToTarget(-1,A));//less than minimum
             System.out.println(closestToTarget.closestToTarget(10,A));//larger than maximum
             System.out.println(closestToTarget.closestToTarget(1, C));//empty array
-            System.out.println(closestToTarget.closestToTarget(1, B));
-        }
-        catch (NullPointerException e){
-            System.out.println("Array is null");
-        }
+            System.out.println(closestToTarget.closestToTarget(1, B));//array is null
     }
 }
